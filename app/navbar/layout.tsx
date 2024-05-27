@@ -1,5 +1,6 @@
 'use client'
 
+import { Button } from "@/components/ui/button"
 import { useState } from "react"
 
 const items = [
@@ -22,21 +23,16 @@ export default function Layout({
       {/* Navbar */}
       <div className="flex flex-wrap items-center justify-between m-8">
         {/* Home button */}
-        <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-          Home
-        </button>
+        <Button>Home</Button>
 
         {/* Expand button */}
-        <button
+        <Button
           onClick={toggleMenu}
           type="button"
-          className="
-            md:hidden
-            bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded
-          "
+          className="md:hidden"
         >
           <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
-        </button>
+        </Button>
 
         {/* Navbar */}
         <div
@@ -54,17 +50,12 @@ export default function Layout({
               border-2 mt-2 p-2
             "
           >
-            {items.map((item, index) => {
-              return <button
-                className="hover:bg-gray-500 h-12"
-              >
-                {item}
-              </button>
+            {items.map((item, _) => {
+              return <Button variant="ghost">{item}</Button>
             })}
           </div>
         </div>
       </div>
-
 
       <hr className="my-8" />
 
